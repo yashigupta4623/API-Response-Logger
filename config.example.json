@@ -1,0 +1,33 @@
+{
+  "check_interval": 60,
+  "alert_settings": {
+    "console": true,
+    "email": false,
+    "webhook": false,
+    "webhook_url": ""
+  },
+  "thresholds": {
+    "response_time_warning": 2000,
+    "response_time_critical": 5000
+  },
+  "apis": [
+    {
+      "name": "JSONPlaceholder API",
+      "url": "https://jsonplaceholder.typicode.com/posts/1",
+      "method": "GET",
+      "headers": {},
+      "expected_status": 200,
+      "check_response_structure": true
+    },
+    {
+      "name": "GitHub API",
+      "url": "https://api.github.com/zen",
+      "method": "GET",
+      "headers": {
+        "User-Agent": "API-Monitor"
+      },
+      "expected_status": 200,
+      "check_response_structure": false
+    }
+  ]
+}
